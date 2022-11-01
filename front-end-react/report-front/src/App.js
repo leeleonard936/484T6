@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,12 +8,19 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
   return (
     
     <div className="App">
       <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Insert Name</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -32,7 +40,9 @@ function App() {
     </Navbar>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        
+        <p>
+          {!data ? "Loading..." : data}
+        </p>
       </header>
     </div>
   );
