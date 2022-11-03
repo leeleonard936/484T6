@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+.mapStyles  {
+  width: '50%';
+  height: '50%';
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +29,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#map {
+  height: 100%;
 }
 
 @keyframes App-logo-spin {
