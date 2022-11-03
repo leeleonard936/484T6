@@ -54,7 +54,7 @@ function App() {
     </Navbar>
       <header className="App-header">
       <LoadScript
-        googleMapsApiKey="AIzaSyCo_iCXAMDqiGtNPuPtNgER6Ntujw8ygYo"
+        googleMapsApiKey="API KEY HERE"
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
