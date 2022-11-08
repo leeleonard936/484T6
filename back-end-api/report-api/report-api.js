@@ -18,7 +18,7 @@ app.get("/api", (req, res) => {
     .find({})
     .toArray((err, result) => {
         if(err){throw err;}
-        //console.log(res.json(result));
+        res.json(result);
         client.close();
     });
   });
