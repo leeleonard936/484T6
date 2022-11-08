@@ -11,8 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
-import {withScriptjs, withGoogleMap, GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
-import {MarkerF} from '@react-google-maps/api'
+import {GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
+//import {with Scriptjs, withGoogleMap, MarkerF} from '@react-google-maps/api'
 
 const containerStyle = {
    width: '100%',
@@ -233,6 +233,10 @@ const onLoad = marker => {
   console.log('marker: ', marker)
 }
 
+
+
+
+
 function App() {
   const [data, setData] = React.useState(null);
   
@@ -276,14 +280,14 @@ function App() {
           center={center}
           zoom={8.125}
           disableDefaultUI='true'
-          //marks={latlangs}
         >
-        {/* <Marker position={markers[1].position}/> */}
+        {/* Iterate through the array of coords*/}
         {markers.map(({ id, name, position }) => (
         <Marker
           //Key={id}
           position={position}
         >
+          {/*Functionality for the markers to be added*/}
         </Marker>
       ))}
         </GoogleMap>
