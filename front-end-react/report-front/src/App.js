@@ -26,15 +26,35 @@ const center = {
 }
 const markers = [
 {
+  id: 1,
+  Name: "Towson",
   position: {
   lat: 39.3925,
   lng: -76.6126
   }
 },
 {
+  id: 2,
+  Name: "Johns Hopkins",
   position: {
-  lat: 37.832,
-  lng: -122.424
+  lat: 39.3299,
+  lng: -76.6205
+  }
+},
+{
+  id: 3,
+  Name: "Johns Hopkins",
+  position: {
+  lat: 38.9869,
+  lng: -76.9426
+  }
+},
+{
+  id: 4,
+  Name: "Morgan State",
+  position: {
+  lat: 39.3438,
+  lng: -76.5844
   }
 }];
 
@@ -79,7 +99,7 @@ function App() {
     </Navbar>
       <header className="App-header">
       <LoadScript
-        googleMapsApiKey="AIzaSyBByOeiRzAxjN9rBPz0IMXX0EyzfPD2bVU"
+        googleMapsApiKey="AIzaSyBoJn5BpD-nHqlcly45R57vG8zo7QiDdDk"
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -88,9 +108,14 @@ function App() {
           disableDefaultUI='true'
           //marks={latlangs}
         >
-        <Marker position={markers[0].position}/>
-        <Marker position={markers[1].position}/>
-        
+        {/* <Marker position={markers[1].position}/> */}
+        {markers.map(({ id, name, position }) => (
+        <Marker
+          //Key={id}
+          position={position}
+        >
+        </Marker>
+      ))}
         </GoogleMap>
       </LoadScript>
        
