@@ -11,28 +11,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
-import { GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
+import {withScriptjs, withGoogleMap, GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
+import {MarkerF} from '@react-google-maps/api'
 
 const containerStyle = {
    width: '100%',
    height: '500px'
  };
 
+
 const center = {
   lat: 38.8,
   lng: -76.7
-};
-
-const position = {
+}
+const markers = [
+{
+  position: {
   lat: 39.3925,
   lng: -76.6126
-};
+  }
+},
+{
+  position: {
+  lat: 37.832,
+  lng: -122.424
+  }
+}];
+
+
 const onLoad = marker => {
   console.log('marker: ', marker)
 }
 
 function App() {
   const [data, setData] = React.useState(null);
+  
+  
 
   React.useEffect(() => {
     fetch("/api")
@@ -44,7 +58,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Insert Name</Navbar.Brand>
+        <Navbar.Brand href="#home">SAStat</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -65,26 +79,25 @@ function App() {
     </Navbar>
       <header className="App-header">
       <LoadScript
-        googleMapsApiKey="INSERT KEY"
+        googleMapsApiKey="AIzaSyBByOeiRzAxjN9rBPz0IMXX0EyzfPD2bVU"
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
           zoom={8.125}
           disableDefaultUI='true'
+          //marks={latlangs}
         >
-          { /* Child components, such as markers, info windows, etc. */ }
-          <></>
-          <Marker
-      onLoad={onLoad}
-      position={position}
-      />
+        <Marker position={markers[0].position}/>
+        <Marker position={markers[1].position}/>
+        
         </GoogleMap>
       </LoadScript>
        
         <p>
           {!data ? "Loading..." : data}
         </p>
+        
       </header>
     </div>
   );
