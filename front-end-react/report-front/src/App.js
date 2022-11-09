@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
+import {useState} from "react";
 
 //bootstrap dependencies
 import Container from 'react-bootstrap/Container';
@@ -8,11 +9,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import {compose, withProps, withStateHandlers} from 'recompose';
 
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
-import {GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
-//import {with Scriptjs, withGoogleMap, MarkerF} from '@react-google-maps/api'
+import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
+import {withScriptjs, withGoogleMap} from '@react-google-maps/api'
 
 const containerStyle = {
    width: '100%',
@@ -239,7 +242,15 @@ const onLoad = marker => {
 
 function App() {
   const [data, setData] = React.useState(null);
-  
+  const [activeMarker, setActiveMarker] = useState(null);
+
+  const handleActiveMarker = (marker) => {
+    if (marker === activeMarker) {
+      return;
+    }
+    setActiveMarker(marker);
+  };
+
   
 
   React.useEffect(() => {
@@ -279,23 +290,41 @@ function App() {
           center={center}
           zoom={8.125}
           disableDefaultUI='true'
+          onClick={() => setActiveMarker(null)}
         >
         {/* Iterate through the array of coords*/}
-        {markers.map(({ id, name, position }) => (
+        {markers.map(({ id, Name, position }) => (
         <Marker
-          //Key={id}
+          Key={id}
           position={position}
+          onClick={() => handleActiveMarker(id)}
         >
-          {/*Functionality for the markers to be added*/}
+          {activeMarker === id ? (
+            <InfoWindow onCloseClick={() => setActiveMarker(null)}>
+              <div>
+                <h1>
+                  School: {Name}
+                </h1>
+              </div>
+            </InfoWindow>
+          ) : null}
+          {/*onclick make a popover*/}
         </Marker>
       ))}
         </GoogleMap>
       </LoadScript>
-       
+      <Row>
+        <Col>
+          <Row>
+            <Nav.Link href = '#top'>Contact Us!</Nav.Link>
+          </Row>
+        </Col>
+        <Col>
         <p>
-          {!data ? "Loading..." : data}
+          {!data ? "Reports" : data}
         </p>
-        
+        </Col>
+      </Row>
       </header>
     </div>
   );

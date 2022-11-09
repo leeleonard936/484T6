@@ -34,7 +34,13 @@
 #map {
   height: 100%;
 }
-
+a {
+  white-space: nowrap;
+}
+.window {
+  width: 25%;
+  background: 'white';
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
