@@ -261,10 +261,9 @@ function App() {
             <Nav.Link href="#link">About Us</Nav.Link>
             <Nav.Link href="#link">Report</Nav.Link>
             <NavDropdown title="More Resources" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Hotlines</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Crisis Counseling</NavDropdown.Item>
+              <NavDropdown.Item href="https://www.rainn.org/resources">Hotlines</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Know your Options</NavDropdown.Item>
+              <NavDropdown.Item href="https://mcasa.org/survivors/after-sexual-assault">Know your Options</NavDropdown.Item>
             </NavDropdown>
             <img src={logo} className="App-logo" alt="logo" />
           </Nav>
@@ -273,7 +272,7 @@ function App() {
     </Navbar>
       <header className="App-header">
       <LoadScript
-        googleMapsApiKey="API KEY HERE"
+        googleMapsApiKey="AIzaSyBoJn5BpD-nHqlcly45R57vG8zo7QiDdDk"
       >
         <GoogleMap
           mapContainerStyle={containerStyle}
