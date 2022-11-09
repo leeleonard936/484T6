@@ -301,10 +301,10 @@ function App() {
         >
           {activeMarker === id ? (
             <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-              <div>
-                <h1>
+              <div className = "window">
+                <h5>
                   School: {Name}
-                </h1>
+                </h5>
               </div>
             </InfoWindow>
           ) : null}
