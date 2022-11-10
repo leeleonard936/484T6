@@ -1,9 +1,12 @@
 .App {
   text-align: center;
 }
-
+.mapStyles  {
+  width: '100%';
+  height: '100%';
+}
 .App-logo {
-  height: 40vmin;
+  height: 7vmin;
   pointer-events: none;
 }
 
@@ -28,6 +31,16 @@
   color: #61dafb;
 }
 
+#map {
+  height: 100%;
+}
+a {
+  white-space: nowrap;
+}
+.window {
+  background-color: white;
+  color: black
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
