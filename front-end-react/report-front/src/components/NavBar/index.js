@@ -19,9 +19,9 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#link">Login</Nav.Link>
-            <Nav.Link href="#link">About Us</Nav.Link>
+            <Nav.Link href="/AboutUs">About Us</Nav.Link>
             <Nav.Link href="#link">Report</Nav.Link>
             <NavDropdown title="More Resources" id="basic-nav-dropdown">
               <NavDropdown.Item href="https://www.rainn.org/resources">Hotlines</NavDropdown.Item>
