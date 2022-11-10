@@ -9,7 +9,12 @@
   height: 7vmin;
   pointer-events: none;
 }
-
+.div-container {
+  min-height: 90vh;
+  width: 80%;
+  background-color: white;
+  color: black;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
