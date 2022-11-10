@@ -15,14 +15,14 @@ const NavBar = () => {
         <>
       <Navbar className="App" bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">SAStat</Navbar.Brand>
+        <Navbar.Brand href="/">SAStat</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">Login</Nav.Link>
+            <Nav.Link href="/LoginPage">Login</Nav.Link>
             <Nav.Link href="/AboutUs">About Us</Nav.Link>
-            <Nav.Link href="#link">Report</Nav.Link>
+            <Nav.Link href="/MakeReport">Report</Nav.Link>
             <NavDropdown title="More Resources" id="basic-nav-dropdown">
               <NavDropdown.Item href="https://www.rainn.org/resources">Hotlines</NavDropdown.Item>
               <NavDropdown.Divider />

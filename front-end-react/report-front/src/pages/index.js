@@ -8,13 +8,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
 import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
-import {withScriptjs, withGoogleMap} from '@react-google-maps/api'
+
 
 import {markers} from './../Data/markers'
 
 const containerStyle = {
     width: '100%',
-    height: '500px'
+    height: '580px'
   };
  
  
@@ -23,9 +23,9 @@ const containerStyle = {
    lng: -76.7
  }
 
- const onLoad = marker => {
-    console.log('marker: ', marker)
-  }
+//  const onLoad = marker => {
+//     console.log('marker: ', marker)
+//   }
  
  const MapHome = () => {
     const [activeMarker, setActiveMarker] = useState(null);

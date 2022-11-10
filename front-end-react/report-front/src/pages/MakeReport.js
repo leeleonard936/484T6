@@ -1,15 +1,19 @@
 import React from "react";
+import Container from 'react-bootstrap/Container';
 
 
-const About = () => {
+const AboutUs = () => {
 return (
-	<div>
-	<h1>
-		GeeksforGeeks is a Computer
-		Science portal for geeks.
-	</h1>
+	<div className="div-container">
+        <Container fluid>
+            <h1>
+		        Make Report
+	        </h1>
+        </Container>
+	
 	</div>
 );
 };
 
-export default About;
+export default AboutUs;
+
