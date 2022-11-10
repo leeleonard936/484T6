@@ -303,7 +303,7 @@ function App() {
             <InfoWindow onCloseClick={() => setActiveMarker(null)}>
               <div className = "window">
                 <h5>
-                  School: {Name}
+                  {Name}
                 </h5>
               </div>
             </InfoWindow>
