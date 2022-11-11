@@ -29,7 +29,7 @@ export const markers = [
   Name: "St. Mary's College",
   position: {
   lat: 38.1885,
-  lng: -76.6205
+  lng: -76.4263
   }
 },
 {
