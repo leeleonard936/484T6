@@ -14,7 +14,7 @@ return (
 			<p className = "verify">
 				By filling out this form you verify that you, an anonymous individual, were a victim of sexual assault on a maryland college campus.
 			</p>
-			<Form /*onSubmit={dothing}*/>
+			<Form method = "post" action = "/*API Address*/"/*onSubmit={dothing}*/>
 				<div>
 					<p>What school do you or your assaulter attend?</p>
 					<Form.Select label="schoolName">
@@ -97,7 +97,7 @@ return (
           			/>
 		  		</div>
 				<br/>
-				<p>If you did not report the incidence to campus authorities, why not? If you did, what was your experience?</p>
+				<p>If you did not report the incident to campus authorities, why not? If you did, what was your experience?</p>
 				<div>
         			<Form.Control 
 						as="textarea" 
@@ -125,7 +125,7 @@ return (
           			/>
 		  		</div>
 				<br/>
-				<p>If you did not report the incidence to police, why not? If you did, what was your experience?</p>
+				<p>If you did not report the incident to police, why not? If you did, what was your experience?</p>
 				<div>
         			<Form.Control 
 						as="textarea" 
