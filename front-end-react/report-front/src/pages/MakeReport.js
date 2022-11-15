@@ -5,10 +5,10 @@ import Container from 'react-bootstrap/Container';
 const AboutUs = () => {
 return (
 	<div className="div-container">
-        <Container fluid>
-            <h1>
-		        Make Report
-	        </h1>
+        <Container fluid style={{padding: 40}}>
+            <h1> Make a Report </h1>
+            <hr></hr>
+			
         </Container>
 	
 	</div>

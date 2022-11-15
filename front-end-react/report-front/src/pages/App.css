@@ -54,3 +54,21 @@ a {
     transform: rotate(360deg);
   }
 }
+
+.btn{
+  background-color: #2299b9;
+  border-color: #2299b9;
+}
+.card{
+  border-color:#2299b9;
+  border-width: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+h4{
+  color: #2299b9;
+  text-align: left;
+}
