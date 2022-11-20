@@ -15,8 +15,10 @@ import {markers} from './../Data/markers'
 
 
 const containerStyle = {
-    width: '100%',
-    height: '580px'
+  position: 'relative',
+  left: '0px',  
+  width: '100%',
+  height: '88vh'
   };
  
  
