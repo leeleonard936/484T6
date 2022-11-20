@@ -14,6 +14,7 @@ return (
 			<p className = "verify">
 				By filling out this form you verify that you, an anonymous individual, were a victim of sexual assault on a maryland college campus.
 			</p>
+			{/*Nodemailer, make sock gmail acct*/}
 			<Form method = "post" action = "/*API Address*/"/*onSubmit={dothing}*/>
 				<div>
 					<p>What school do you or your assaulter attend?</p>
