@@ -10,7 +10,7 @@ return (
         <Container fluid>
             <Col>
             <h1>
-                <Form method = "POST" action="mailto:sampleemail@gmail.com"/*onSubmit={dothing}*/>
+                <Form method = "POST" /*hit api with info*/>
                     <Form.Text muted>
                         Please reach out to us with any questions or requests for information!
                     </Form.Text>
