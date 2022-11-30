@@ -14,7 +14,6 @@
   width: 80%;
   background-color: white;
   color: black;
-  text-align: center;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -42,14 +41,6 @@
 }
 a {
   white-space: nowrap;
-}
-.verify {
-  font-size: small;
-}
-Form {
-  text-align: left;
-  font-size: medium;
-  width: 60%
 }
 .window {
   background-color: white;
