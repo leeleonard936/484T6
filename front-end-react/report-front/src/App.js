@@ -31,7 +31,7 @@ function App() {
       <NavBar />
       <header className="App-header">
       <Routes>
-        <Route exact path='/' element={<><MapHome /> <Popup/></>} />
+        <Route exact path='/' element={<><MapHome /><Popup/></>} />
         <Route exact path='/AboutUs' element={<AboutUs />} />
         <Route exact path='/LoginPage' element={<LoginPage />} />
         <Route exact path='/MakeReport' element={<MakeReport />} />
