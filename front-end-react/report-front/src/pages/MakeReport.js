@@ -7,7 +7,8 @@ import {markers} from './../Data/markers'
 const AboutUs = () => {
 return (
 	<div className="div-container">
-        <Container fluid>
+
+        <Container fluid style ={{padding: 40}}>
             <h1>
 		        Make A Report
 	        </h1>
@@ -141,6 +142,7 @@ return (
 				</div>
 				<br/>
 			</Form>
+
         </Container>
 	
 	</div>
