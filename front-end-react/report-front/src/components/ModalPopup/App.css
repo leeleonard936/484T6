@@ -14,7 +14,6 @@
   width: 80%;
   background-color: white;
   color: black;
-  text-align: center;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -43,14 +42,6 @@
 a {
   white-space: nowrap;
 }
-.verify {
-  font-size: small;
-}
-Form {
-  text-align: left;
-  font-size: medium;
-  width: 60%
-}
 .window {
   background-color: white;
   color: black
@@ -62,22 +53,4 @@ Form {
   to {
     transform: rotate(360deg);
   }
-}
-
-.btn{
-  background-color: #2299b9;
-  border-color: #2299b9;
-}
-.card{
-  border-color:#2299b9;
-  border-width: 3px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-}
-h4{
-  color: #2299b9;
-  text-align: left;
 }

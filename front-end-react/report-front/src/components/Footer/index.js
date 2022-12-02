@@ -22,12 +22,12 @@ const Footer = () => {
         <Container>
         <Row>
         <Col>
-            <Nav.Link href = '#top'>Contact Us!</Nav.Link>
+            <Nav.Link href = '/Contact'>Contact Us!</Nav.Link>
         </Col>
         <Col> | </Col>
         <Col>
         <p>
-          {!data ? "Reports" : data}
+        Reports: {!data ? "Null" : data}
         </p>
         </Col>
       </Row>
