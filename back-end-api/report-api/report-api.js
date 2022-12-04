@@ -22,7 +22,7 @@ function startServer() {
 
 //reading all documents from ReportData Collection when website hits 
 // "/api" which will be changed to "/researcher"
-function getAllReports() {
+function getAllReportsAtEndpoint() {
   app.get("/api", (req, res) => {
     client.connect(err => {
       if (err) { console.log("Problems Connecting to database") }
@@ -39,7 +39,26 @@ function getAllReports() {
   })
 };
 
+//returns all documents from ReportData Collection as a function
+//return type will be an array of json objects
+function getAllReports(callback) {
+  client.connect(err => {
+    if (err) { console.log("Problems Connecting to database") }
+    const collection = client.db("Group6").collection("ReportData");
+
+    collection
+      .find({})
+      .toArray((err, result) => {
+        if (err) { callback(err); }
+        client.close();
+        callback(null, result);
+      });
+  });
+};
+
+
 //returns the number of times a school name shows up in the report collection
+//as a type num
 function getNumberOfReports(schoolName, callback) {
 
   client.connect(err => {
@@ -51,8 +70,6 @@ function getNumberOfReports(schoolName, callback) {
       .find({school: schoolName})
       .toArray((err, result) => {
         if (err) { return callback(err); }
-      
-        //console.log("From inside async " + result.length); //finds proper length can i return this value?
         
         client.close();  
 
@@ -80,6 +97,15 @@ function getNumberOfReports(schoolName, callback) {
 //   }
 // });
 
+//useage of getAllReports
+// getAllReports(function (err, allReports) {
+//   if (!err) {
+//     console.log(allReports)
+//   }
+// });
 
-//now how do i call this function from another file?
-module.exports = {startServer, getAllReports, getNumberOfReports};
+
+
+//to call functions from another file:
+module.exports = {startServer, getAllReportsAtEndpoint, 
+  getAllReports, getNumberOfReports};
