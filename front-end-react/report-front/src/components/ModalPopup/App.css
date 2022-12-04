@@ -9,7 +9,12 @@
   height: 7vmin;
   pointer-events: none;
 }
-
+.div-container {
+  min-height: 90vh;
+  width: 80%;
+  background-color: white;
+  color: black;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -18,7 +23,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 150vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
