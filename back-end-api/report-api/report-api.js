@@ -1,13 +1,15 @@
 //best resource for linking RESTful APIs and MongoDB
 //https://www.mongodb.com/languages/express-mongodb-rest-api-tutorial
 
+//how to return from monogodb async functions
+//https://stackoverflow.com/questions/25473650/mongodb-get-the-number-of-documents-count-in-a-collection-using-node-js
+
 const express = require("express");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const PORT = process.env.PORT || 3001;
 const uri = "mongodb+srv://group6:horseNeck2023@reportdata.5sr0hj8.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const app = express();
-
 
 //starts the server
   //cant tell if I need this or not...
@@ -56,13 +58,12 @@ function getAllReports(callback) {
   });
 };
 
-
 //returns the number of times a school name shows up in the report collection
 //as a type num
 function getNumberOfReports(schoolName, callback) {
 
   client.connect(err => {
-
+    
     if (err) { console.log("Problems Connecting to database") }
     const collection = client.db("Group6").collection("ReportData");
 
@@ -75,6 +76,23 @@ function getNumberOfReports(schoolName, callback) {
 
         callback(null, result.length);
       });
+  });
+};
+
+//submits a report 
+//pass in a json object, result logged to the console
+function submitReport(newReportInfo) {
+  client.connect(err => {
+    if (err) { console.log("Problems Connecting to database") }
+    const collection = client.db("Group6").collection("ReportData");
+
+    collection.insertOne(newReportInfo, function(err, result){
+      if (err) { throw err; }
+      else{
+        console.log("New report added to reports collection with id " + result.insertedId);
+      }
+      client.close(); 
+    });
   });
 };
 
@@ -104,8 +122,6 @@ function getNumberOfReports(schoolName, callback) {
 //   }
 // });
 
-
-
 //to call functions from another file:
 module.exports = {startServer, getAllReportsAtEndpoint, 
-  getAllReports, getNumberOfReports};
+  getAllReports, getNumberOfReports, submitReport};
