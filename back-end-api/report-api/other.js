@@ -2,7 +2,7 @@
 //shows the useage of each of the function from report-api.js in an
 //external file
 
-var reportAPI = require('./report-api.js');
+var reportAPI = require('./databaseInterface.js');
 
 //hitting an endpoint and getting all the reports as json objects:
 //var x = reportAPI.startServer();
