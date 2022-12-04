@@ -1,17 +1,17 @@
+
 import './App.css';
 import React from "react";
 import {useState} from "react";
 
 //bootstrap dependencies
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
 import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
-
-
 import {markers} from './../Data/markers'
 
+//declare variable only after importing everything 
+var database = require('./../../../../back-end-api/report-api/databaseInterface');
 
 
 const containerStyle = {
@@ -75,7 +75,8 @@ const containerStyle = {
                   {Name}
                 </h5><br/>
                 <p>
-                    Reports: {!data ? "Null" : data[id].reports}
+                    {/* Here is where edits next to reports will go! */}
+                    Reports: {Name = Name.toUpperCase()}
                 </p>
               </div>
             </InfoWindow>

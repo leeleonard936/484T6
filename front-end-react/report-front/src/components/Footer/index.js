@@ -27,6 +27,7 @@ const Footer = () => {
         <Col> | </Col>
         <Col>
         <p>
+        {/* add reports numbers here */}
         Reports: {!data ? "Null" : data}
         </p>
         </Col>
