@@ -23,7 +23,6 @@ function startServer() {
 //reading all documents from ReportData Collection when website hits 
 // "/api" which will be changed to "/researcher"
 function getAllReports() {
-
   app.get("/api", (req, res) => {
     client.connect(err => {
       if (err) { console.log("Problems Connecting to database") }
@@ -38,7 +37,6 @@ function getAllReports() {
         });
     });
   })
-
 };
 
 //returns the number of times a school name shows up in the report collection
@@ -60,10 +58,7 @@ function getNumberOfReports(schoolName, callback) {
 
         callback(null, result.length);
       });
-
   });
-
-  
 };
 
 
