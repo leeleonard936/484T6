@@ -29,3 +29,12 @@ var reportAPI = require('./report-api.js');
 // reportAPI.submitReport(sampleReport);
 
 
+//verifying username and password
+// reportAPI.verifyUser("drDooLittle", "12345", function(err, valid){
+//     if(valid == true){
+//         console.log("User DOES Exist");
+//     }
+//     else{
+//         console.log("User DOESNT Exist");
+//     }
+// });

@@ -4,6 +4,9 @@
 //how to return from monogodb async functions
 //https://stackoverflow.com/questions/25473650/mongodb-get-the-number-of-documents-count-in-a-collection-using-node-js
 
+//to find an exact match for a mongo query:
+//https://www.tutorialspoint.com/mongodb-query-for-exact-match-on-multiple-document-fields
+
 const express = require("express");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const PORT = process.env.PORT || 3001;
@@ -96,8 +99,33 @@ function submitReport(newReportInfo) {
   });
 };
 
+//verify user
+//will return error if nothing found, will return true if 
+//userName and password combination exists
+function verifyUser(_userName, _password, callback){
+  client.connect(err => {
+    
+    if (err) { console.log("Problems Connecting to database") }
+    const collection = client.db("Group6").collection("VerifiedUsers");
 
-
+    collection
+      .find({'$and': [{'userName': {'$in': [_userName]}, 'password': {'$in': [_password]}}]})
+      .toArray((err, result) => {
+        if (err) { return callback(err); }
+        
+        client.close(); 
+        //console.log(result);
+        
+        if(result.length == 0){
+          callback(null, false);
+        }
+        else{
+          callback(null, true)
+        };
+        
+      });
+  });
+};
 
 
 
@@ -124,4 +152,4 @@ function submitReport(newReportInfo) {
 
 //to call functions from another file:
 module.exports = {startServer, getAllReportsAtEndpoint, 
-  getAllReports, getNumberOfReports, submitReport};
+  getAllReports, getNumberOfReports, submitReport, verifyUser};
