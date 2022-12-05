@@ -10,8 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
 import {markers} from './../Data/markers'
 
-//declare variable only after importing everything 
-var database = require('./../../../../back-end-api/report-api/databaseInterface');
 
 
 const containerStyle = {
