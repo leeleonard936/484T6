@@ -67,12 +67,13 @@ app.get("/allReports", (req, res) => {
 
 //send new report to database
 app.use(express.json());
-app.post("/", (req, res) =>{
+app.post("/submitReport", (req, res) =>{
     
     newReportInfo = req.body;
     //res.send(req.body);
     console.log(newReportInfo);
-    
+   
+    //THIS WORKS: FIX THE FORM THEN UNCOMMENT
     // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
     // client.connect(err => {
     //     if (err) { console.log("Problems Connecting to database") }
