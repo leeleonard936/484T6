@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
 import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
 import {markers} from './../Data/markers'
-import axios from "axios";
 
 
 const containerStyle = {
@@ -33,18 +32,20 @@ const containerStyle = {
     const [activeMarker, setActiveMarker] = useState(null);
     const [data, setData] = React.useState(null);
     React.useEffect(() => {
-    
+
       // markers.forEach((element) =>{
       //   //console.log(element.Name);
 
-      //   fetch("/reportData/" + element.Name)
-      //     .then((res) => res.json())
-      //     .then((data) => setData(data));
-      // });
-  
-        fetch("/reportData/Towson")
-          .then((res) => res.json())
-          .then((data) => setData(data));
+      //    fetch("/reportData/" + element.Name)
+      //      .then((res) => res.json())
+      //      .then((data) => setData(data));
+      //  });
+
+      //HOW TO SET DATA FOR EACH SCHOOL?
+        // //fetch("/reportData/" + activeMarker.Name)
+        // fetch("/reportData/")
+        //   .then((res) => res.json())
+        //   .then((data) => setData(data));
       }, []);
 
     
@@ -53,6 +54,9 @@ const containerStyle = {
       return;
     }
     setActiveMarker(marker);
+      fetch("/reportData/")
+        .then((res) => res.json())
+        .then((data) => setData(data));
   };
 
   return (
