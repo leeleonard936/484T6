@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
 import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
 import {markers} from './../Data/markers'
-
+import axios from "axios";
 
 
 const containerStyle = {
@@ -74,7 +74,7 @@ const containerStyle = {
                 </h5><br/>
                 <p>
                     {/* Here is where edits next to reports will go! */}
-                    Reports: {Name = Name.toUpperCase()}
+                    Reports: {data}
                 </p>
               </div>
             </InfoWindow>
