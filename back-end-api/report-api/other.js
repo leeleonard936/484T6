@@ -16,7 +16,7 @@ var reportAPI = require('./databaseInterface.js');
 // });
 
 //getting back a number of all reports for a given school:
-reportAPI.getNumberOfReports("Towson University", function (err, count) {
+reportAPI.getNumberOfReports("Towson", function (err, count) {
     if (!err) {
       console.log(count);
     }
