@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Radio, RadioGroup} from 'react-radio-group'
 import {markers} from './../Data/markers'
 import Axios from 'axios';
 const MakeReport = () => {
@@ -65,7 +64,7 @@ return (
 
 				<div>
 					<p>Did the incident occur on the campus of that institution? </p>
-          			<Form.Check 
+          			{/* <Form.Check 
 						// value = {data.oncampus}
             			inline
             			label="Yes"
@@ -81,17 +80,20 @@ return (
             			name="oncampus"
             			type="radio"
             			id="oncampus-no"
-          			/>
+          			/> */}
 
-					{/* <RadioGroup id="oncampus" onChange={(e) => handle(e)}>
-						<div className="radio-button-background">
-							<Radio name="oncampus-yes" value = {data.oncampus} className="radio-button" />Yes
-						</div>
-
-						<div className="radio-button-background">
-							<Radio name="oncampus-no" value = {data.oncampus} className="radio-button" />No
-						</div>
-					</RadioGroup> */}
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="oncampus" id="oncampus-yes" value="true" />
+							<label class="form-check-label" for="exampleRadios1">
+								Yes
+							</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="oncampus" id="oncampus-no" value="false"/>
+							<label class="form-check-label" for="exampleRadios2">
+								No
+							</label>
+					</div>
 
 		  		</div>
 				<br/>
@@ -192,7 +194,7 @@ return (
 				</div>
 				<br/>
 				<div>
-					<Button type="submit">Submit </Button>
+					<Button type="submit" href="https://www.rainn.org/resources">Submit </Button>
 				</div>
 				<br/>
 			</Form>

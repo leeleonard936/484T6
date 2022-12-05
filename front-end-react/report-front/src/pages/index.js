@@ -24,6 +24,18 @@ const containerStyle = {
    lng: -76.7
  }
 
+const reportNums = [];
+reportNums.push("");
+markers.forEach((element) => {
+  //console.log(element.Name);
+  reportNums.push(element.Name);
+});
+
+// reportNums.forEach((element) => {
+//   console.log(element);
+// });
+
+
 //  const onLoad = marker => {
 //     console.log('marker: ', marker)
 //   }
@@ -43,9 +55,9 @@ const containerStyle = {
 
       //HOW TO SET DATA FOR EACH SCHOOL?
         // //fetch("/reportData/" + activeMarker.Name)
-        // fetch("/reportData/")
-        //   .then((res) => res.json())
-        //   .then((data) => setData(data));
+        // fetch("/reportData/Towson")
+        //    .then((res) => res.json())
+        //    .then((data) => setData(data));
       }, []);
 
     
@@ -54,7 +66,9 @@ const containerStyle = {
       return;
     }
     setActiveMarker(marker);
-      fetch("/reportData/")
+
+      //use this for showing all numbers
+      fetch("/reportData/" + reportNums[marker])
         .then((res) => res.json())
         .then((data) => setData(data));
   };
