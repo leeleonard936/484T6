@@ -33,7 +33,16 @@ const containerStyle = {
     const [activeMarker, setActiveMarker] = useState(null);
     const [data, setData] = React.useState(null);
     React.useEffect(() => {
-        fetch("/schools")
+    
+      // markers.forEach((element) =>{
+      //   //console.log(element.Name);
+
+      //   fetch("/reportData/" + element.Name)
+      //     .then((res) => res.json())
+      //     .then((data) => setData(data));
+      // });
+  
+        fetch("/reportData/Towson")
           .then((res) => res.json())
           .then((data) => setData(data));
       }, []);

@@ -13,9 +13,9 @@ import Row from 'react-bootstrap/Row';
 const Footer = () => {
     const [data, setData] = React.useState(null);
     React.useEffect(() => {
-        fetch("/api")
+        fetch("/reportData")
           .then((res) => res.json())
-          .then((data) => setData(data.message));
+          .then((data) => setData(data));
       }, []);
     return(
         <>
