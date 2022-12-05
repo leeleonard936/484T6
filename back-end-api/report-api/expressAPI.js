@@ -66,9 +66,11 @@ app.get("/allReports", (req, res) => {
 });
 
 //send new report to database
-app.post("/tomongo", (req, res) =>{
+app.use(express.json());
+app.post("/", (req, res) =>{
     
     newReportInfo = req.body;
+    //res.send(req.body);
     console.log(newReportInfo);
     
     // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
