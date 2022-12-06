@@ -53,7 +53,7 @@ return (
       		</Row>
 
 			  <p className="mb-0 text-center">
-					<a href="https://www.google.com" className="text-primary fw-bold" style={{fontSize: 15}}>  {/* Needs to be linked to the right place; I wasn't sure what to link yet */}
+					<a href="./Contact.js" className="text-primary fw-bold" style={{fontSize: 15}}>  {/* Needs to be linked to the right place; I wasn't sure what to link yet */}
                         Apply for an Account
                     </a>
                 </p>
