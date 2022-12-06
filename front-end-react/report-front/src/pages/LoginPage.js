@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
 
 const LoginPage = () => {
 return (
@@ -36,7 +37,7 @@ return (
 											
 											<div>
                         						<Button variant="primary" type="submit">
-                          							Submit
+												<Nav.Link href = '/LoginLand'>Submit</Nav.Link>	
                         						</Button>
                       						</div>
 

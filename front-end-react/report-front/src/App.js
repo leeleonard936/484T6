@@ -17,6 +17,7 @@ import MapHome from './pages'
 import LoginPage from './pages/LoginPage'
 import MakeReport from './pages/MakeReport'
 import Contact from './pages/Contact'
+import LoginLand from './pages/LoginLand'
 import Popup from './components/ModalPopup'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route exact path='/LoginPage' element={<LoginPage />} />
         <Route exact path='/MakeReport' element={<MakeReport />} />
         <Route exact path='/Contact' element={<Contact />} />
+        <Route exact path='/LoginLand' element={<LoginLand />}/>
     </Routes>
     <Footer/>
     </header>
