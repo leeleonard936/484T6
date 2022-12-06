@@ -9,7 +9,7 @@ const MakeReport = () => {
 
 
 	//make sure to change this URL for production model
-	const url = "http://localhost:3000/submitReport"
+	const url = "https://us-central1-host-484-backend.cloudfunctions.net/app/submitReport"
 	const [data, setData] = useState({
 		school: "",
 		oncampus: "",
