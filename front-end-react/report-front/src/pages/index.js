@@ -1,17 +1,14 @@
+
 import './App.css';
 import React from "react";
 import {useState} from "react";
 
 //bootstrap dependencies
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //GOOGLE MAP API DEPENDENCIES V IMPORTANT PLZ DO NOT FUCK WITH THIS THANK YOU :)
 import {GoogleMap, LoadScript, Marker, InfoWindow} from '@react-google-maps/api';
-
-
 import {markers} from './../Data/markers'
-
 
 
 const containerStyle = {
@@ -27,6 +24,18 @@ const containerStyle = {
    lng: -76.7
  }
 
+const reportNums = [];
+reportNums.push("");
+markers.forEach((element) => {
+  //console.log(element.Name);
+  reportNums.push(element.Name);
+});
+
+// reportNums.forEach((element) => {
+//   console.log(element);
+// });
+
+
 //  const onLoad = marker => {
 //     console.log('marker: ', marker)
 //   }
@@ -35,9 +44,20 @@ const containerStyle = {
     const [activeMarker, setActiveMarker] = useState(null);
     const [data, setData] = React.useState(null);
     React.useEffect(() => {
-        fetch("/schools")
-          .then((res) => res.json())
-          .then((data) => setData(data));
+
+      // markers.forEach((element) =>{
+      //   //console.log(element.Name);
+
+      //    fetch("/reportData/" + element.Name)
+      //      .then((res) => res.json())
+      //      .then((data) => setData(data));
+      //  });
+
+      //HOW TO SET DATA FOR EACH SCHOOL?
+        // //fetch("/reportData/" + activeMarker.Name)
+        // fetch("/reportData/Towson")
+        //    .then((res) => res.json())
+        //    .then((data) => setData(data));
       }, []);
 
     
@@ -46,6 +66,11 @@ const containerStyle = {
       return;
     }
     setActiveMarker(marker);
+
+      //use this for showing all numbers
+      fetch("/reportData/" + reportNums[marker])
+        .then((res) => res.json())
+        .then((data) => setData(data));
   };
 
   return (
@@ -75,7 +100,8 @@ const containerStyle = {
                   {Name}
                 </h5><br/>
                 <p>
-                    Reports: {!data ? "Null" : data[id].reports}
+                    {/* Here is where edits next to reports will go! */}
+                    Reports: {data}
                 </p>
               </div>
             </InfoWindow>
