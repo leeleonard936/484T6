@@ -93,6 +93,6 @@ exports.app = functions.https.onRequest(app);
 
 //uncomment to test locally
 //listener to start it all
-app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server listening on ${PORT}`);
+// });
