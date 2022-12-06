@@ -74,25 +74,25 @@ app.post("/submitReport", (req, res) => {
   console.log(newReportInfo);
 
   //THIS WORKS: FIX THE FORM THEN UNCOMMENT
-  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-  client.connect(err => {
-    if (err) { console.log("Problems Connecting to database") }
-    const collection = client.db("Group6").collection("ReportData");
+  // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+  // client.connect(err => {
+  //   if (err) { console.log("Problems Connecting to database") }
+  //   const collection = client.db("Group6").collection("ReportData");
 
-    collection.insertOne(newReportInfo, function (err, result) {
-      if (err) { throw err; }
-      else {
-        console.log("New report added to reports collection with id " + result.insertedId);
-      }
-      client.close();
-    });
-  });
+  //   collection.insertOne(newReportInfo, function (err, result) {
+  //     if (err) { throw err; }
+  //     else {
+  //       console.log("New report added to reports collection with id " + result.insertedId);
+  //     }
+  //     client.close();
+  //   });
+  // });
 });
 
 exports.app = functions.https.onRequest(app);
 
 //uncomment to test locally
 //listener to start it all
-// app.listen(PORT, () => {
-//     console.log(`Server listening on ${PORT}`);
-// });
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+});
