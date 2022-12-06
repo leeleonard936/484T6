@@ -4,7 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { markers } from './../Data/markers'
 import Axios from 'axios';
+
 const MakeReport = () => {
+
 
 	//make sure to change this URL for production model
 	const url = "http://localhost:3000/submitReport"
@@ -39,8 +41,6 @@ const MakeReport = () => {
 			.then(res => {
 				console.log(res.data);
 			});
-
-		//somehow you must clear the fields again!
 	}
 
 	return (
@@ -119,12 +119,12 @@ const MakeReport = () => {
 								No
 							</label>
 						</div>
-						
+
 					</div>
 					<br />
 					<div>
 						<p>Did you report this incident to the institution? </p>
-						
+
 						<div class="form-check">
 							<label>
 								<input class="form-check-input" type="radio" name="campusreport" id="campusreport" value="true" onChange={(e) => handle(e)} />
@@ -183,7 +183,12 @@ const MakeReport = () => {
 					</div>
 					<br />
 					<div>
-						<Button type="submit" >Submit </Button>
+
+						<Button type="submit">Submit</Button>
+						
+					
+
+
 					</div>
 					<br />
 				</Form>
