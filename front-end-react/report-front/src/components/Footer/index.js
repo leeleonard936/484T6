@@ -9,11 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-
+const url = "https://us-central1-host-484-backend.cloudfunctions.net/app"
 const Footer = () => {
     const [data, setData] = React.useState(null);
     React.useEffect(() => {
-        fetch("/reportData")
+        fetch("https://us-central1-host-484-backend.cloudfunctions.net/app/reportData")
           .then((res) => res.json())
           .then((data) => setData(data));
       }, []);
