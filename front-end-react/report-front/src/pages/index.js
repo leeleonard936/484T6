@@ -68,7 +68,7 @@ markers.forEach((element) => {
     setActiveMarker(marker);
 
       //use this for showing all numbers
-      fetch("/reportData/" + reportNums[marker])
+      fetch("https://us-central1-host-484-backend.cloudfunctions.net/app/reportData/" + reportNums[marker])
         .then((res) => res.json())
         .then((data) => setData(data));
   };
